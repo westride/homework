@@ -1,21 +1,20 @@
-#hw5. 1
+#hw5. 1 Schema
 
-name: string
-post:text
-age: integer
-blurb:string
+Follow table
+    follower_id  :integer
+    followee_id  :integer
+
+User Table
+    user_id :integer
+    title   :string
+    body    :string
 
 
-
-2. User.create(name:"amy", age:32,blurb:"journey")
-    User.create(name:Elisa",age:25)
-    User.last.update(blurb:"today's treat")
-    User.find(1)
-    User.all.collect t{|u| puts u.name}
-    User.first
-    User.first.update(name:"Cindy")
-    User.last
-    User.create(name:"edward")
-    User.last.update(age:28)
-    User.destroy
-
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "age"
+    t.integer  "order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "location"
